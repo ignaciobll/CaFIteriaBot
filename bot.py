@@ -22,12 +22,12 @@ def listener(messages):
 
 @bot.inline_handler(lambda query: query.query == 'menu')
 def menu(inline_query):
-    image_name = './menu.jpg'
     r = types.InlineQueryResultPhoto('1',
                                      'Result1',
-                                     image_name,
+                                     'https://raw.githubusercontent.com/ignaciobll/CaFIteriaBot/master/menu.jpg',
+                                     'https://raw.githubusercontent.com/ignaciobll/CaFIteriaBot/master/menu.jpg',
                                      input_message_content=types.InputTextMessageContent('hi'))
-    bot.answer_inline_query(inline_query.id, [r])
+    bot.answer_inline_query(inline_query.id, [r], cache_time=1)
 
 print("Running...")
 
